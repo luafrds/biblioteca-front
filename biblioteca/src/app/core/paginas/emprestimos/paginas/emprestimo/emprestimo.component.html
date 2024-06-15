@@ -1,3 +1,161 @@
-<p>
-  emprestimo works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div id="kt_filtro_card" class="card card-custom gutter-b">
+        <div id="accordion">
+          <div class="card">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="card-header">
+                  <h5 class="mb-0">
+                    <div class="d-flex justify-content-between">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <span class="card-icon">
+                            <i class="fa-solid fa-filter fa-lg" style="color: #c8f5df;"></i>
+                          </span>
+                        </div>
+                        <div class="col">
+                          <h4 class="card-label mb-0 text-white"><b>FILTROS</b></h4>
+                        </div>
+                      </div>
+                    </div>
+                  </h5>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body pr-0">
+                    <form class="form" [formGroup]="emprestimoForm" (submit)="filtrarRegistros()">
+                      <div class="card-body p-0">
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Nome Completo:</label>
+                            <input name="nomeCompleto" type="text" class="form-control" formControlName="NomeCompletoUsuario" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Título do Livro:</label>
+                            <input name="tituloLivro" type="text" class="form-control" formControlName="TituloLivro" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Data do Empréstimo:</label>
+                            <input name="dataEmprestimo" type="date" class="form-control" formControlName="DataEmprestimo" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Data Prevista de Devolução:</label>
+                            <input name="dataDevolucaoPrevista" type="date" class="form-control" formControlName="DataDevolucaoPrevista" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Data de Devolução:</label>
+                            <input name="dataDevolucao" type="date" class="form-control" formControlName="DataDevolucao" />
+                          </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                          <button type="reset" class="btn btn-limpar mr-2" (click)="limpar()">
+                            <i class="fas fa-eraser pb-1"></i> Limpar
+                          </button>
+                          <button type="submit" class="btn btn-primary text-white">
+                            <i class="fa fa-search pb-1" style="color: #c8f5df;"></i> Pesquisar
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="pt-5">
+        <div class="card card-custom gutter-b">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <span class="card-icon">
+                  <i class="fa-solid fa-list fa-lg" style="color: #c8f5df;"></i>
+                </span>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h4 class="card-label mb-0 text-white"><b>RESULTADOS</b></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="row pb-0 mb-0">
+              <div class="col-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width: 80px" class="text-center">Ações</th>
+                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('NomeCompletoUsuario')">
+                        Nome Completo
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('TituloLivro')">
+                        Título do Livro
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataEmprestimo')">
+                        Data do Empréstimo
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataDevolucaoPrevista')">
+                        Data de Devolução Prevista
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataDevolucao')">
+                        Data de Devolução
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let item of response?.Registros; let i = index">
+                      <tr>
+                        <th scope="row" class="text-center align-middle">
+                          <div class="dropdown">
+                            <button class="btn btn-primary btn-icon btn-xs" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-cog" style="color: #fff23b;"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" data-toggle="modal" data-target="#cantinaModalCenter" (click)="editar(item)" href="#">Editar</a></li>
+                            </ul>
+                          </div>
+                        </th>
+                        <th scope="row" class="text-center align-middle">{{ item.NomeCompletoUsuario }}</th>
+                        <td class="text-center align-middle">{{ item.TituloLivro }}</td>
+                        <td class="text-center align-middle">{{ item.DataEmprestimo | date: "dd/MM/yyyy" }}</td>
+                        <td class="text-center align-middle">{{ item.DataDevolucaoPrevista | date: "dd/MM/yyyy" }}</td>
+                        <td class="text-center align-middle">{{ item.DataDevolucao | date: "dd/MM/yyyy" }}</td>
+                      </tr>
+                    </ng-container>
+                  </tbody>
+                </table>
+                <ng-container *ngIf="mostrarPaginacao">
+                  <app-paginacao-generica
+                    [atualizarValores]="atualizarValores"
+                    [response]="response"
+                    [request]="request"
+                    (atualizarLista)="atualizarLista($event)"
+                  ></app-paginacao-generica>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

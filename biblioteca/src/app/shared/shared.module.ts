@@ -3,10 +3,12 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from "./components/header/header.component";
+import { PaginacaoGenericaComponent } from "./components/paginacao-generica/paginacao-generica.component";
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    PaginacaoGenericaComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { HeaderComponent } from "./components/header/header.component";
     FormsModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    PaginacaoGenericaComponent
   ],
   providers: [],
   bootstrap: [],
