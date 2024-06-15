@@ -1,7 +1,7 @@
 export const environment = {
   config: {
     apis: {
-      biblioteca: 'http://localhost:5006/api/',
+      biblioteca: 'http://localhost:5243/api/',
     },
   },
 };
