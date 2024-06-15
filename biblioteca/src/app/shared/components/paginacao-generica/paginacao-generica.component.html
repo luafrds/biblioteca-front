@@ -1,22 +1,22 @@
 <div class="d-flex justify-content-between align-items-center flex-wrap">
     <div>
-        <button class="btn btn-icon btn-sm btn-light-primary ml-9 mr-2 my-1" (click)="irParaPrimeiraPagina()">
+        <button class="btn btn-icon btn-sm btn-light-primary ml-9 mr-2 my-1 button-color" (click)="irParaPrimeiraPagina()">
             <i class="fa-solid fa-angles-left"></i>
         </button>
         
-        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" (click)="paginaAnterior()">
+        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1 button-color button-border" (click)="paginaAnterior()">
             <i class="fa-solid fa-angle-left"></i>
         </button>
         
         <ng-container *ngFor="let pagina of paginasExibidas">
-            <button class="btn btn-icon btn-sm border-0 btn-hover-primary mr-2 my-1" [class.active]="request.Pg === pagina" (click)="irParaPagina(pagina)">{{ pagina }}</button>
+            <button class="btn btn-icon btn-sm border-0 btn-hover-primary mr-2 my-1 button-color" [class.active]="request.Pg === pagina" (click)="irParaPagina(pagina)">{{ pagina }}</button>
         </ng-container>
         
-        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" (click)="proximaPagina()">
+        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1 button-color" (click)="proximaPagina()">
             <i class="fa-solid fa-angle-right"></i>
         </button>                   
         
-        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1" (click)="irParaUltimaPagina()">
+        <button class="btn btn-icon btn-sm btn-light-primary mr-2 my-1 button-color" (click)="irParaUltimaPagina()">
             <i class="fa-solid fa-angles-right"></i>
         </button>             
     </div>

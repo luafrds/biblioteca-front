@@ -1,9 +1,62 @@
 <app-header [titulo]="titulo" [subtitulo]="subtitulo"></app-header>
 
 <div class="pt-5"></div>
+  <div class="div-cartoes">
+    
+    <div class="cartoes">
+      <div class="cartao-conteudo">
+        <div class="cartao-logo"><img src="assets/img/stockwhite.png" height="55px">
+      </div>
+        <div class="cartao-text">
+          <h6 class="mb-1 mt-3">Total de Livros</h6>
+          <div class="cartao-dado">653</div>
+        </div> 
+      </div>
+    </div>
+
+    <div class="cartoes">
+      <div class="cartao-conteudo">
+        <div class="cartao-logo">
+          <img src="assets/img/users.png" height="57px">
+      </div>
+        <div class="cartao-text">
+          <h6 class="mb-1 mt-3">Usuários Cadastrados</h6>
+          <div class="cartao-dado">586</div>
+        </div> 
+      </div>
+    </div>
+
+    <div class="cartoes">
+      <div class="cartao-conteudo">
+        <div class="cartao-logo">
+          <img style="margin-left: 5px;" src="assets/img/borrowwhite.png" height="55px">
+      </div>
+        <div class="cartao-text">
+          <h6 class="mb-1 mt-3">Livros Emprestados</h6>
+          <div class="cartao-dado">217</div>
+        </div> 
+      </div>
+    </div>
+
+    <div class="cartoes">
+      <div class="cartao-conteudo">
+        <div class="cartao-logo">
+          <img src="assets/img/late.png" height="55px">
+      </div>
+        <div class="cartao-text">
+          <h6 class="mb-1 mt-3">Devoluções Atrasadas</h6>
+          <div class="cartao-dado">36</div>
+        </div> 
+      </div>
+    </div>
+
+    
+  </div>
+
+<div class="pt-3"></div>
 
 <div class="d-flex flex-column-fluid mx-5">
-  <div class="container-fluid">
+  <div class="container-fluid pb-5">
     <div class="card card-custom gutter-b">
       <div class="card-body pb-0">
         <select id="tabSelect" class="nav-select btn btn-sm btn-secondary" (change)="selecionarTab($event)">

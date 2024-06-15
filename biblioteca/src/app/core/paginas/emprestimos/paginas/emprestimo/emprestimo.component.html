@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
+<div class="">
+  <div class="row pb-3">
+    <div class="col-md-3">
       <div id="kt_filtro_card" class="card card-custom gutter-b">
         <div id="accordion">
           <div class="card">
@@ -12,18 +12,18 @@
                       <div class="row align-items-center">
                         <div class="col-auto">
                           <span class="card-icon">
-                            <i class="fa-solid fa-filter fa-lg" style="color: #c8f5df;"></i>
+                            <img src="assets/img/search-borrow.png" height="25px" alt="">
                           </span>
                         </div>
                         <div class="col">
-                          <h4 class="card-label mb-0 text-white"><b>FILTROS</b></h4>
+                          <h6 class="card-label mb-0 text-white"><b>BUSCAR EMPRÉSTIMO</b></h6>
                         </div>
                       </div>
                     </div>
                   </h5>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div class="accordion-body pr-0">
+                  <div class="accordion-body">
                     <form class="form" [formGroup]="emprestimoForm" (submit)="filtrarRegistros()">
                       <div class="card-body p-0">
                         <div class="col-md-12 col-sm-12">
@@ -57,11 +57,11 @@
                           </div>
                         </div>
                         <div class="card-footer d-flex justify-content-end">
-                          <button type="reset" class="btn btn-limpar mr-2" (click)="limpar()">
+                          <button type="reset" class="btn btn-limpar mr-2 button-color2" (click)="limpar()">
                             <i class="fas fa-eraser pb-1"></i> Limpar
                           </button>
-                          <button type="submit" class="btn btn-primary text-white">
-                            <i class="fa fa-search pb-1" style="color: #c8f5df;"></i> Pesquisar
+                          <button type="submit" class="btn button-color text-white">
+                            <i class="fa fa-search pb-1" style="color: #ffffff;"></i> Pesquisar
                           </button>
                         </div>
                       </div>
@@ -75,19 +75,19 @@
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="pt-5">
+    <div class="col-md-9">
+      <div class="">
         <div class="card card-custom gutter-b">
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-auto">
                 <span class="card-icon">
-                  <i class="fa-solid fa-list fa-lg" style="color: #c8f5df;"></i>
+                  <i class="fa-solid fa-list fa-lg" style="color: #ffffff;"></i>
                 </span>
               </div>
               <div class="col">
                 <div class="d-flex align-items-center justify-content-between">
-                  <h4 class="card-label mb-0 text-white"><b>RESULTADOS</b></h4>
+                  <h6 class="card-label my-2 text-white"><b>RESULTADOS</b></h6>
                 </div>
               </div>
             </div>
@@ -98,24 +98,24 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th scope="col" style="width: 80px" class="text-center">Ações</th>
-                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('NomeCompletoUsuario')">
+                      <th scope="col" style="width: 80px" class="text-center font-weight-bold">Ações</th>
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('NomeCompletoUsuario')">
                         Nome Completo
                         <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
                       </th>
-                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('TituloLivro')">
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('TituloLivro')">
                         Título do Livro
                         <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
                       </th>
-                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataEmprestimo')">
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('DataEmprestimo')">
                         Data do Empréstimo
                         <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
                       </th>
-                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataDevolucaoPrevista')">
-                        Data de Devolução Prevista
+                      <th scope="col" class="text-center cursor-pointe font-weight-bold" (click)="sortBy('DataDevolucaoPrevista')">
+                        Data Prevista de Devolução
                         <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
                       </th>
-                      <th scope="col" class="text-center cursor-pointer" (click)="sortBy('DataDevolucao')">
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('DataDevolucao')">
                         Data de Devolução
                         <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
                       </th>
@@ -126,15 +126,15 @@
                       <tr>
                         <th scope="row" class="text-center align-middle">
                           <div class="dropdown">
-                            <button class="btn btn-primary btn-icon btn-xs" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="fa fa-cog" style="color: #fff23b;"></i>
+                            <button class="btn btn-primary btn-icon btn-xs button-color button-border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-cog button-color"></i>
                             </button>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" data-toggle="modal" data-target="#cantinaModalCenter" (click)="editar(item)" href="#">Editar</a></li>
                             </ul>
                           </div>
                         </th>
-                        <th scope="row" class="text-center align-middle">{{ item.NomeCompletoUsuario }}</th>
+                        <th class="text-center align-middle font-weight-normal">{{ item.NomeCompletoUsuario }}</th>
                         <td class="text-center align-middle">{{ item.TituloLivro }}</td>
                         <td class="text-center align-middle">{{ item.DataEmprestimo | date: "dd/MM/yyyy" }}</td>
                         <td class="text-center align-middle">{{ item.DataDevolucaoPrevista | date: "dd/MM/yyyy" }}</td>

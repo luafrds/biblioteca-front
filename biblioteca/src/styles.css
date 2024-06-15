@@ -2080,30 +2080,30 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none; }
 
-.btn-primary {
+.btn-verde {
   color: #fff;
   background-color: #3C6A54;
   border-color: #3C6A54; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #1d4099;
-    border-color: #1b3c8e; }
-  .btn-primary:focus, .btn-primary.focus {
+    background-color: #3C6A54;
+    border-color: #3C6A54; }
+  /* .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5);
-    box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5); }
+    box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5); } */
   .btn-primary.disabled, .btn-primary:disabled {
     color: #fff;
-    background-color: #234eb9;
-    border-color: #234eb9; }
+    background-color: #3C6A54;
+    border-color: #3C6A54; }
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #1b3c8e;
-    border-color: #193783; }
-    .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+    background-color: #3C6A54;
+    border-color: #3C6A54; }
+    /* .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-primary.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5);
-      box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5); }
+      box-shadow: 0 0 0 0.2rem rgba(68, 105, 196, 0.5); } */
 
 .btn-secondary {
   color: #212529;
@@ -3829,7 +3829,7 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #f7f8fa;
+  background-color: #ffffff;
   border-top: 1px solid #ebedf2; }
   .card-footer:last-child {
     border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
@@ -7964,11 +7964,15 @@ button.bg-dark:focus {
 a.text-primary:hover, a.text-primary:focus {
   color: #173379 !important; }
 
+.text-verde {
+  color: #c8f5df !important;
+}
+
 .text-secondary {
-  color: #e1e1ef !important; }
+  color: #c8f5df !important; }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #afafd4 !important; }
+  color: #c8f5df !important; }
 
 .text-success {
   color: #43c452 !important; }
@@ -8992,10 +8996,8 @@ a.text-dark:hover, a.text-dark:focus {
     .btn-focus + .btn.dropdown-toggle:hover:before, .btn-focus + .btn.dropdown-toggle:focus:before, .btn-focus + .btn.dropdown-toggle.active:before {
       display: none; }
 
-.btn-primary {
-  color: #fff;
-  background-color: #234eb9;
-  border-color: #234eb9; }
+/* .btn-primary {
+  color: #fff; }
   .btn-primary:hover {
     color: #fff;
     background-color: #1d4099;
@@ -9028,7 +9030,7 @@ a.text-dark:hover, a.text-dark:focus {
       bottom: 3px;
       opacity: 0.3; }
     .btn-primary + .btn.dropdown-toggle:hover:before, .btn-primary + .btn.dropdown-toggle:focus:before, .btn-primary + .btn.dropdown-toggle.active:before {
-      display: none; }
+      display: none; } */
 
 .btn-success {
   color: #fff;
@@ -30980,4 +30982,65 @@ html *, body * {
   .logo-seguradora {
     max-height: 80px;
     max-width: 100%;
+  }
+
+  .button-color{
+    background-color: #3C6A54 !important;
+    color: white;
+  }
+
+  .button-color:hover{
+    background-color: #3C6A54 !important;
+    color: grey !important;
+  }
+
+  .button-border{
+    border-color: none;
+  }
+
+  .button-color2{
+    border: 1px solid #3C6A54;
+    color: #3C6A54;
+  }
+
+  .div-cartoes{
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+    margin-left: 4rem;
+    margin-right: 3rem;
+  }
+
+  .cartoes{
+    color:white !important;
+    background-color: #3C6A54;;
+    border-radius: 5px;
+    width: 250px;
+    height: 100px;
+    box-shadow: 0 0 0.3px grey;
+    padding: 1rem;
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  .cartao-conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cartao-logo{
+    margin-right: 2rem;
+  }
+
+  .cartao-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+
+  .cartao-dado{
+    font-weight: bold;
+    font-size: 2rem;
   }

@@ -9,7 +9,6 @@ import { PaginacaoResponse } from 'app/shared/components/models/responses/pagina
 @Component({
   selector: 'app-emprestimo',
   templateUrl: './emprestimo.component.html',
-  styleUrls: ['./emprestimo.component.css'],
 })
 export class EmprestimoComponent implements OnInit {
   emprestimoForm?: FormGroup;
