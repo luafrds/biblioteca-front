@@ -2,43 +2,45 @@
 
 <div class="pt-5"></div>
 
-<div class="d-flex flex-column-fluid">
+<div class="d-flex flex-column-fluid mx-5">
   <div class="container-fluid">
     <div class="card card-custom gutter-b">
       <div class="card-body pb-0">
-        <select id="tabSelect" class="nav-select btn btn-sm btn-secondary" (change)="selecionarTab($event)">
-          <option value="dados-pessoais">Dados</option>
-          <option value="contatos">Contatos</option>
-          <option value="ordem-servico">Ordem de Serviço</option>
+        <select id="tabSelect"  class="nav-select btn btn-sm btn-secondary" (change)="selecionarTab($event)">
+          <option value="usuarios">Usuários</option>
+          <option value="livros">Livros</option>
+          <option value="emprestimos">Empréstimos</option>
         </select>
-        <ul id="myTab" role="tablist" class="nav nav-tabs">
+        <ul id="myTab" role="tablist" class="nav nav-tabs pt-5">
           <li class="nav-item">
-            <a id="dados-pessoais-tab" data-toggle="tab" href="#dados-pessoais" class="nav-link active" (click)="selecionarTabPorClick($event, 'dados-pessoais')">
-              <span class="nav-icon"><i class="ki ki-bold-sort"></i></span>
-              <span class="nav-text">Dados</span>
+            <a id="usuarios-tab" data-toggle="tab" href="#usuarios" class="nav-link active" (click)="selecionarTabPorClick($event, 'usuarios')">
+                <i style="color: #3C6A54;" class="fa-solid fa-user fa-sm"></i>
+              <span class="nav-text text-primary">Usuários</span>
             </a>
           </li>
           <li class="nav-item">
-            <a id="contatos-tab" data-toggle="tab" href="#contatos" class="nav-link" (click)="selecionarTabPorClick($event, 'contatos')">
-              <span class="nav-icon"><i class="flaticon2-phone"></i></span>
-              <span class="nav-text">Contatos</span>
+            <a id="livros-tab" data-toggle="tab" href="#livros" class="nav-link" (click)="selecionarTabPorClick($event, 'livros')">
+              <span class="nav-icon">
+                <i style="color: #3C6A54;" class="fa-solid fa-book fa-sm"></i>
+                </span>
+              <span class="nav-text text-primary">Livros</span>
             </a>
           </li>
           <li class="nav-item">
-            <a id="ordem-servico-tab" data-toggle="tab" href="#ordem-servico" class="nav-link" (click)="selecionarTabPorClick($event, 'ordem-servico')">
-              <span class="nav-icon"><i class="flaticon2-list-1"></i></span>
-              <span class="nav-text">Ordem de Serviço</span>
+            <a id="emprestimos-tab" data-toggle="tab" href="#emprestimos" class="nav-link" (click)="selecionarTabPorClick($event, 'emprestimos')">
+              <span class="nav-icon"><i style="color: #3C6A54;" class="fa-solid fa-handshake-simple fa-sm"></i></span>
+              <span class="nav-text text-primary">Empréstimos</span>
             </a>
           </li>
         </ul>
         <div id="myTabContent" class="tab-content mt-5">
-          <div id="dados-pessoais" role="tabpanel" aria-labelledby="dados-pessoais-tab" class="tab-pane fade active show">
+          <div id="usuarios" role="tabpanel" aria-labelledby="usuarios-tab" class="tab-pane fade active show">
             <app-usuario></app-usuario>
           </div>
-          <div id="contatos" role="tabpanel" aria-labelledby="contatos-tab" class="tab-pane fade">
+          <div id="livros" role="tabpanel" aria-labelledby="livros-tab" class="tab-pane fade">
             <app-livro></app-livro>
           </div>
-          <div id="ordem-servico" role="tabpanel" aria-labelledby="ordem-servico-tab" class="tab-pane fade">
+          <div id="emprestimos" role="tabpanel" aria-labelledby="emprestimos-tab" class="tab-pane fade">
             <app-emprestimo></app-emprestimo>
           </div>     
         </div>
