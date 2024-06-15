@@ -1,3 +1,161 @@
-<p>
-  livro works!
-</p>
+<div class="">
+  <div class="row pb-3">
+    <div class="col-md-3">
+      <div id="kt_filtro_card" class="card card-custom gutter-b">
+        <div id="accordion">
+          <div class="card">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="card-header">
+                  <h5 class="mb-0">
+                    <div class="d-flex justify-content-between">
+                      <div class="row align-items-center">
+                        <div class="col-auto">
+                          <span class="card-icon">
+                            <img src="assets/img/search-book.png" height="25px" alt="">
+                          </span>
+                        </div>
+                        <div class="col">
+                          <h6 class="card-label mb-0 text-white"><b>BUSCAR LIVRO</b></h6>
+                        </div>
+                      </div>
+                    </div>
+                  </h5>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <form class="form" [formGroup]="livroForm" (submit)="filtrarRegistros()">
+                      <div class="card-body p-0">
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Título:</label>
+                            <input name="titulo" type="text" class="form-control" formControlName="Titulo" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Autor:</label>
+                            <input name="autor" type="text" class="form-control" formControlName="Autor" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Gênero:</label>
+                            <input name="genero" type="text" class="form-control" formControlName="Genero" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Ano:</label>
+                            <input name="ano" type="text" class="form-control" formControlName="Ano" />
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="form-group">
+                            <label>Quantidade:</label>
+                            <input name="quantidade" type="number" class="form-control" formControlName="Quantidade" />
+                          </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end">
+                          <button type="reset" class="btn btn-limpar mr-2 button-color2" (click)="limpar()">
+                            <i class="fas fa-eraser pb-1"></i> Limpar
+                          </button>
+                          <button type="submit" class="btn button-color text-white">
+                            <i class="fa fa-search pb-1" style="color: #ffffff;"></i> Pesquisar
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="">
+        <div class="card card-custom gutter-b">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <span class="card-icon">
+                  <i class="fa-solid fa-list fa-lg" style="color: #ffffff;"></i>
+                </span>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <h6 class="card-label my-2 text-white"><b>RESULTADOS</b></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-3">
+            <div class="row pb-0 mb-0">
+              <div class="col-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="width: 80px" class="text-center font-weight-bold">Ações</th>
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('Titulo')">
+                        Título
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('Autor')">
+                        Autor
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointer font-weight-bold" (click)="sortBy('Genero')">
+                        Gênero
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointe font-weight-bold" (click)="sortBy('Ano')">
+                        Ano
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                      <th scope="col" class="text-center cursor-pointe font-weight-bold" (click)="sortBy('Quantidade')">
+                        Quantidade
+                        <i class="datatable-icon-sort-unset icon-sm sort-btn m-0 p-0 text-center"></i>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let item of response?.Registros; let i = index">
+                      <tr>
+                        <th scope="row" class="text-center align-middle">
+                          <div class="dropdown">
+                            <button class="btn btn-primary btn-icon btn-xs button-color button-border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-cog button-color"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" data-toggle="modal" data-target="#cantinaModalCenter" (click)="editar(item)" href="#">Editar</a></li>
+                            </ul>
+                          </div>
+                        </th>
+                        <th class="text-center align-middle font-weight-normal">{{ item.Titulo }}</th>
+                        <td class="text-center align-middle">{{ item.Autor }}</td>
+                        <td class="text-center align-middle">{{ item.Genero }}</td>
+                        <td class="text-center align-middle">{{ item.Ano }}</td>
+                        <td class="text-center align-middle">{{ item.Quantidade }}</td>
+                      </tr>
+                    </ng-container>
+                  </tbody>
+                </table>
+                <ng-container *ngIf="mostrarPaginacao">
+                  <app-paginacao-generica
+                    [atualizarValores]="atualizarValores"
+                    [response]="response"
+                    [request]="request"
+                    (atualizarLista)="atualizarLista($event)"
+                  ></app-paginacao-generica>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
