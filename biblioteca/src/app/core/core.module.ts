@@ -8,6 +8,10 @@ import { SharedModule } from "app/shared/shared.module";
 import { EmprestimoComponent } from "./paginas/emprestimos/paginas/emprestimo/emprestimo.component";
 import { UsuarioComponent } from "./paginas/usuarios/paginas/usuario/usuario.component";
 import { LivroComponent } from "./paginas/livros/paginas/livro/livro.component";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { ToastrModule } from "ngx-toastr";
+import { ModalModule } from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [InicioComponent, EmprestimoComponent, UsuarioComponent, LivroComponent],
@@ -17,7 +21,11 @@ import { LivroComponent } from "./paginas/livros/paginas/livro/livro.component";
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule,
+    NgSelectModule,
+    ToastrModule.forRoot(),
+    ModalModule,
   ],
   providers: [],
 })

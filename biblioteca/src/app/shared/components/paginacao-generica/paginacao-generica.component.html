@@ -20,16 +20,4 @@
             <i class="fa-solid fa-angles-right"></i>
         </button>             
     </div>
-
-    <div class="d-flex align-items-center py-3 mb-2">            
-        <label class="p-2" style="margin: 0;">Exibindo:</label>
-        <select class="form-control form-control-sm text-primary font-weight-bold mr-4 border-0 bg-light-primary text-center" style="width: 75px;" [(ngModel)]="valorSelecionado" (change)="alterarConsulta(valorSelecionado)">
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-        </select>
-        <span class="text-muted mr-7"> de {{ response?.Total }} registros</span>                    
-    </div>
 </div>

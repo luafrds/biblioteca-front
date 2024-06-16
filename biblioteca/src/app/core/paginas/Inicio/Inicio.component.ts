@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
   titulo = 'Painel de Controle';
-  subtitulo = 'Biblioteca';
+  subtitulo = 'Biblioteca Conecta';
 
   constructor() {}
 

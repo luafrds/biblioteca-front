@@ -1,11 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-@charset "UTF-8";
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+@import "ngx-toastr/toastr";
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -31045,3 +31040,11 @@ html *, body * {
     font-weight: bold;
     font-size: 2rem;
   }
+
+.footer {
+  background-color: #3C6A54;
+  padding: 20px 0;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}

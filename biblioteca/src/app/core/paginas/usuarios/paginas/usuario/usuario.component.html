@@ -47,7 +47,13 @@
                         <div class="col-md-12 col-sm-12">
                           <div class="form-group">
                             <label>Tipo de Usuário:</label>
-                            <input name="tipoUsuario" type="text" class="form-control" formControlName="TipoUsuario" />
+                            <ng-select
+                              placeholder="Todos"
+                              [items]="tipoUsuarioConfig"
+                              bindValue="Value"
+                              bindLabel="Description"
+                              formControlName="TipoUsuario">
+                            </ng-select>
                           </div>
                         </div>
                         <div class="card-footer d-flex justify-content-end">
@@ -116,18 +122,22 @@
                       <tr>
                         <th scope="row" class="text-center align-middle">
                           <div class="dropdown">
-                            <button class="btn btn-primary btn-icon btn-xs button-color button-border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              <i class="fa fa-cog button-color"></i>
+                            <button class="btn btn-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-cog" style="color: #3C6A54;"></i>
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" data-toggle="modal" data-target="#cantinaModalCenter" (click)="editar(item)" href="#">Editar</a></li>
+                              <li><a class="dropdown-item" data-toggle="modal" data-target="#usuarioModalCenter" (click)="editar(item)" href="#">Editar</a></li>
                             </ul>
                           </div>
                         </th>
                         <th class="text-center align-middle font-weight-normal">{{ item.NomeCompleto }}</th>
                         <td class="text-center align-middle">{{ item.Email }}</td>
                         <td class="text-center align-middle">{{ item.Telefone }}</td>
-                        <td class="text-center align-middle">Aluno</td>
+                        <td class="text-center align-middle">
+                          <span *ngIf="item.TipoUsuario === 0">Bibliotecário</span>
+                          <span *ngIf="item.TipoUsuario === 1">Professor</span>
+                          <span *ngIf="item.TipoUsuario === 2">Aluno</span>
+                      </td>
                       </tr>
                     </ng-container>
                   </tbody>

@@ -24,6 +24,12 @@ export class UsuarioComponent implements OnInit {
 
   atualizarValores: boolean = false;
 
+  tipoUsuarioConfig = [
+    { Value: 0, Description: "Bibliotecario" },
+    { Value: 1, Description: "Professor" },
+    { Value: 2, Description: "Aluno" }
+  ]
+
   constructor(
     private readonly service: UsuarioService,
     private readonly builder: FormBuilder
