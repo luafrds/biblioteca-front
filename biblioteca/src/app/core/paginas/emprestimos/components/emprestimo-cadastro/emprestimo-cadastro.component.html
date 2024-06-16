@@ -5,7 +5,7 @@
 
 <ng-template #template>
   <div class="modal-header" style="background-color: #3C6A54;">
-    <h5 class="modal-title pull-left text-white font-weight-bold">CADASTRO DE USUÁRIO</h5>
+    <h5 class="modal-title pull-left text-white font-weight-bold">CADASTRO DE EMPRÉSTIMO</h5>
     <button
       type="button"
       class="close pull-right"
@@ -17,32 +17,41 @@
   <form class="form" [formGroup]="cadastroForm">
     <div class="modal-body pt-4">
       <div class="row col-12 pr-0">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <div class="form-group">
-            <label>E-mail:</label>
-            <input name="email" type="text" class="form-control" formControlName="Email" />
+            <label>Nome Completo:</label>
+            <input name="nomeCompletoUsuario" type="text" class="form-control" formControlName="NomeCompletoUsuario" />
           </div>
         </div>
-      </div>
-      <div class="row col-12 pr-0">
-        <div class="col-md-12 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <div class="form-group">
-            <label>Telefone:</label>
+            <label>Título do Livro:</label>
             <input name="telefone" type="text" class="form-control" formControlName="Telefone" />
           </div>
         </div>
       </div>
+      
       <div class="row col-12 pr-0">
         <div class="col-md-12 col-sm-12">
           <div class="form-group">
-            <label>Tipo de Usuário:</label>
-            <ng-select
-            placeholder="Todos"
-            [items]="tipoUsuarioConfig"
-            bindValue="Value"
-            bindLabel="Description"
-            formControlName="TipoUsuario">
-          </ng-select>
+            <label>Data do Empréstimo:</label>
+            <input name="dataEmprestimo" type="date" class="form-control" formControlName="DataEmprestimo" />
+          </div>
+        </div>
+      </div>
+      <div class="row col-12 pr-0">
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group">
+            <label>Data Prevista da Devolução:</label>
+            <input name="dataDevolucaoPrevista" type="date" class="form-control" formControlName="DataDevolucaoPrevista" />
+          </div>
+        </div>
+      </div>
+      <div class="row col-12 pr-0">
+        <div class="col-md-12 col-sm-12">
+          <div class="form-group">
+            <label>Data de Devolução:</label>
+            <input name="dataDevolucao" type="date" class="form-control" formControlName="DataDevolucao" />
           </div>
         </div>
       </div>
@@ -60,7 +69,7 @@
       type="submit"
       data-toggle="modal"
       data-target="#exampleModalCenter"
-      (click)="inserirUsuario()"
+      (click)="inserirEmprestimo()"
       class="btn button-color ml-2"
       [disabled]="cadastroForm.invalid">
       <i class="fa fa-save pb-1 pr-2"></i>Inserir

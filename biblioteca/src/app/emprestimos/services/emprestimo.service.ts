@@ -5,7 +5,7 @@ import { EmprestimoListarRequest } from "../models/requests/emprestimo-listar.re
 import { PaginacaoResponse } from "app/shared/components/models/responses/paginacao.response";
 import { Observable } from "rxjs";
 import { EmprestimoResponse } from "../models/responses/emprestimo.response";
-
+import { EmprestimoRequest } from "../models/requests/emprestimo.request";
 
 @Injectable({
   providedIn: "root",
@@ -19,5 +19,10 @@ export class EmprestimoService {
     return this.http.get<PaginacaoResponse<EmprestimoResponse>>(
       this.urlBase + 'emprestimos', { params: <any>request }
     );
+  }
+
+  inserir(request: EmprestimoRequest): Observable<EmprestimoResponse> {
+    return this.http.post<EmprestimoResponse>(
+      this.urlBase + 'emprestimos', request);
   }
 }

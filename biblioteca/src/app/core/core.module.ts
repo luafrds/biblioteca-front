@@ -13,14 +13,18 @@ import { NgSelectModule } from "@ng-select/ng-select";
 import { ToastrModule } from "ngx-toastr";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { UsuarioCadastroComponent } from "./paginas/usuarios/components/usuario-cadastro/usuario-cadastro.component";
+import { EmprestimoCadastroComponent } from "./paginas/emprestimos/components/emprestimo-cadastro/emprestimo-cadastro.component";
+import { LivroCadastroComponent } from "./paginas/livros/components/livro-cadastro/livro-cadastro.component";
 
 @NgModule({
   declarations: [
     InicioComponent,
     EmprestimoComponent,
+    EmprestimoCadastroComponent,
     UsuarioComponent,
     UsuarioCadastroComponent,
-    LivroComponent
+    LivroComponent,
+    LivroCadastroComponent
   ],
   imports: [
     CoreRoutingModule,

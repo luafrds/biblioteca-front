@@ -9,7 +9,6 @@ import { PaginacaoResponse } from 'app/shared/components/models/responses/pagina
 @Component({
   selector: 'app-livro',
   templateUrl: './livro.component.html',
-  styleUrls: ['./livro.component.css']
 })
 export class LivroComponent implements OnInit {
 

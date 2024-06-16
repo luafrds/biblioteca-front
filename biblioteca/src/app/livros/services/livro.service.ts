@@ -5,6 +5,7 @@ import { PaginacaoResponse } from "app/shared/components/models/responses/pagina
 import { Observable } from "rxjs";
 import { LivroListarRequest } from "../models/requests/livro-listar.request";
 import { LivroResponse } from "../models/responses/livro.response";
+import { LivroRequest } from "../models/requests/livro.request";
 
 @Injectable({
   providedIn: "root",
@@ -18,5 +19,10 @@ export class LivroService {
     return this.http.get<PaginacaoResponse<LivroResponse>>(
       this.urlBase + 'livros', { params: <any>request }
     );
+  }
+
+  inserir(request: LivroRequest): Observable<LivroResponse> {
+    return this.http.post<LivroResponse>(
+      this.urlBase + 'livros', request);
   }
 }
