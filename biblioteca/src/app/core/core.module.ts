@@ -12,9 +12,16 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { NgSelectModule } from "@ng-select/ng-select";
 import { ToastrModule } from "ngx-toastr";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { UsuarioCadastroComponent } from "./paginas/usuarios/components/usuario-cadastro/usuario-cadastro.component";
 
 @NgModule({
-  declarations: [InicioComponent, EmprestimoComponent, UsuarioComponent, LivroComponent],
+  declarations: [
+    InicioComponent,
+    EmprestimoComponent,
+    UsuarioComponent,
+    UsuarioCadastroComponent,
+    LivroComponent
+  ],
   imports: [
     CoreRoutingModule,
     FormsModule,

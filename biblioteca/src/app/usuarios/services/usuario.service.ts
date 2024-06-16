@@ -5,6 +5,7 @@ import { PaginacaoResponse } from "app/shared/components/models/responses/pagina
 import { Observable } from "rxjs";
 import { UsuarioListarRequest } from "../models/requests/usuario-listar.request";
 import { UsuarioResponse } from "../models/responses/usuario.response";
+import { UsuarioRequest } from "../models/requests/usuario.request";
 
 @Injectable({
   providedIn: "root",
@@ -18,5 +19,10 @@ export class UsuarioService {
     return this.http.get<PaginacaoResponse<UsuarioResponse>>(
       this.urlBase + 'usuarios', { params: <any>request }
     );
+  }
+
+  inserir(request: UsuarioRequest): Observable<UsuarioResponse> {
+    return this.http.post<UsuarioResponse>(
+      this.urlBase + 'usuarios', request);
   }
 }
