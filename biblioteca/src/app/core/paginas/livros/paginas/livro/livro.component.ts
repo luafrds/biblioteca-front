@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LIVRO_LISTAR_FORM } from 'app/livros/formularios/livro-listar.form';
 import { LivroListarRequest } from 'app/livros/models/requests/livro-listar.request';
 import { LivroResponse } from 'app/livros/models/responses/livro.response';
 import { LivroService } from 'app/livros/services/livro.service';
 import { PaginacaoResponse } from 'app/shared/components/models/responses/paginacao.response';
+import { LivroEdicaoComponent } from '../../components/livro-edicao/livro-edicao.component';
 
 @Component({
   selector: 'app-livro',
   templateUrl: './livro.component.html',
 })
 export class LivroComponent implements OnInit {
+
+  @ViewChild(LivroEdicaoComponent) modal: LivroEdicaoComponent;
 
   livroForm?: FormGroup;
 
@@ -75,5 +78,10 @@ export class LivroComponent implements OnInit {
 
   limpar(): void {
     this.livroForm.reset();
+  }
+
+  editar(valoresIniciais: any){
+    this.modal.edicaoForm.patchValue(valoresIniciais);
+    this.modal.idEditar = valoresIniciais.Id;
   }
 }

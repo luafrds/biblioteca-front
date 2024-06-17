@@ -1,0 +1,67 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header custom-modal-header">
+      <h5 class="modal-title custom-modal-title text-center">EDIÇÃO DE USUÁRIO</h5>
+    </div>
+    <form class="form" [formGroup]="edicaoForm">
+      <div class="modal-body pt-4">
+        <div class="row col-12 pr-0">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label>Título:</label>
+              <input name="titulo" type="text" class="form-control" formControlName="Titulo" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label>Autor:</label>
+              <input name="autor" type="text" class="form-control" formControlName="Autor" />
+            </div>
+          </div>
+        </div>
+        
+        <div class="row col-12 pr-0">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group">
+              <label>Gênero:</label>
+              <input name="genero" type="text" class="form-control" formControlName="Genero" />
+            </div>
+          </div>
+        </div>
+        <div class="row col-12 pr-0">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group">
+              <label>Ano:</label>
+              <input name="ano" type="text" class="form-control" formControlName="Ano" />
+            </div>
+          </div>
+        </div>
+        <div class="row col-12 pr-0">
+          <div class="col-md-12 col-sm-12">
+            <div class="form-group">
+              <label>Quantidade:</label>
+              <input name="quantidade" type="number" class="form-control" formControlName="Quantidade" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-limpar"
+        data-dismiss="modal"
+        (click)="modalRef.hide()">
+        <i class="fa-solid fa-xmark fa-lg pr-2 text-center"></i>Cancelar
+      </button>
+      <button
+        type="submit"
+        data-toggle="modal"
+          data-target="#editarModalCenter"
+        class="btn btn-primary ml-2"
+        (click)="editar()"
+        [disabled]="edicaoForm.invalid">
+        <i class="fa fa-save pb-1 pr-2"></i>Editar
+      </button>
+  </div>
+</div>

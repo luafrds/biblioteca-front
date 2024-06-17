@@ -16,17 +16,21 @@ import { UsuarioCadastroComponent } from "./paginas/usuarios/components/usuario-
 import { EmprestimoCadastroComponent } from "./paginas/emprestimos/components/emprestimo-cadastro/emprestimo-cadastro.component";
 import { LivroCadastroComponent } from "./paginas/livros/components/livro-cadastro/livro-cadastro.component";
 import { UsuarioEdicaoComponent } from "./paginas/usuarios/components/usuario-edicao/usuario-edicao.component";
+import { LivroEdicaoComponent } from "./paginas/livros/components/livro-edicao/livro-edicao.component";
+import { EmprestimoEdicaoComponent } from "./paginas/emprestimos/components/emprestimo-edicao/emprestimo-edicao.component";
 
 @NgModule({
   declarations: [
     InicioComponent,
     EmprestimoComponent,
     EmprestimoCadastroComponent,
+    EmprestimoEdicaoComponent,
     UsuarioComponent,
     UsuarioCadastroComponent,
     UsuarioEdicaoComponent,
     LivroComponent,
-    LivroCadastroComponent
+    LivroCadastroComponent,
+    LivroEdicaoComponent
   ],
   imports: [
     CoreRoutingModule,

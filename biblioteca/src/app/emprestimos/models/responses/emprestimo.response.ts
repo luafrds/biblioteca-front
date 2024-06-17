@@ -4,15 +4,15 @@ export class EmprestimoResponse {
     NomeCompletoUsuario: string;
     IdLivro: number;
     TituloLivro: string;
-    DataEmprestimo: Date;
-    DataDevolucaoPrevista: Date;
-    DataDevolucao: Date;
+    DataEmprestimo: string;
+    DataDevolucaoPrevista: string;
+    DataDevolucao: string;
 
     constructor(params: Partial<EmprestimoResponse>) {
         this.NomeCompletoUsuario = params.NomeCompletoUsuario || '';
         this.TituloLivro = params.TituloLivro || '';
-        this.DataEmprestimo = params.DataEmprestimo || null;
-        this.DataDevolucaoPrevista = params.DataDevolucaoPrevista || null;
-        this.DataDevolucao = params.DataDevolucao || null;
+        this.DataEmprestimo = params.DataEmprestimo || '';
+        this.DataDevolucaoPrevista = params.DataDevolucaoPrevista || '';
+        this.DataDevolucao = params.DataDevolucao || '';
     }
 }

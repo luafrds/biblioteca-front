@@ -25,4 +25,11 @@ export class LivroService {
     return this.http.post<LivroResponse>(
       this.urlBase + 'livros', request);
   }
+
+  editar(Id: number, request: LivroRequest ): Observable<LivroRequest> {
+    return this.http.put<LivroResponse>(
+      `${this.urlBase}livros/${Id}`,
+      request
+    );
+  }
 }

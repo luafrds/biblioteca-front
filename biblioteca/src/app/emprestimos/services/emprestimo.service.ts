@@ -25,4 +25,11 @@ export class EmprestimoService {
     return this.http.post<EmprestimoResponse>(
       this.urlBase + 'emprestimos', request);
   }
+
+  editar(Id: number, request: EmprestimoRequest ): Observable<EmprestimoRequest> {
+    return this.http.put<EmprestimoResponse>(
+      `${this.urlBase}emprestimos/${Id}`,
+      request
+    );
+  }
 }

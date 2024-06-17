@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EMPRESTIMO_LISTAR_FORM } from 'app/emprestimos/formularios/emprestimo-listar.form';
 import { EmprestimoListarRequest } from 'app/emprestimos/models/requests/emprestimo-listar.request';
 import { EmprestimoResponse } from 'app/emprestimos/models/responses/emprestimo.response';
 import { EmprestimoService } from 'app/emprestimos/services/emprestimo.service';
 import { PaginacaoResponse } from 'app/shared/components/models/responses/paginacao.response';
+import { EmprestimoEdicaoComponent } from '../../components/emprestimo-edicao/emprestimo-edicao.component';
 
 @Component({
   selector: 'app-emprestimo',
   templateUrl: './emprestimo.component.html',
 })
 export class EmprestimoComponent implements OnInit {
+
+  @ViewChild(EmprestimoEdicaoComponent) modal: EmprestimoEdicaoComponent;
+
   emprestimoForm?: FormGroup;
 
   response: PaginacaoResponse<EmprestimoResponse>;
@@ -74,5 +78,10 @@ export class EmprestimoComponent implements OnInit {
 
   limpar(): void {
     this.emprestimoForm.reset();
+  }
+
+  editar(valoresIniciais: any){
+    this.modal.edicaoForm.patchValue(valoresIniciais);
+    this.modal.idEditar = valoresIniciais.Id;
   }
 }
