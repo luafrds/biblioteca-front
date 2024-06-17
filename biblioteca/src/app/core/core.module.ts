@@ -15,6 +15,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { UsuarioCadastroComponent } from "./paginas/usuarios/components/usuario-cadastro/usuario-cadastro.component";
 import { EmprestimoCadastroComponent } from "./paginas/emprestimos/components/emprestimo-cadastro/emprestimo-cadastro.component";
 import { LivroCadastroComponent } from "./paginas/livros/components/livro-cadastro/livro-cadastro.component";
+import { UsuarioEdicaoComponent } from "./paginas/usuarios/components/usuario-edicao/usuario-edicao.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LivroCadastroComponent } from "./paginas/livros/components/livro-cadast
     EmprestimoCadastroComponent,
     UsuarioComponent,
     UsuarioCadastroComponent,
+    UsuarioEdicaoComponent,
     LivroComponent,
     LivroCadastroComponent
   ],

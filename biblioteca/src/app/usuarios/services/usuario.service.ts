@@ -25,4 +25,11 @@ export class UsuarioService {
     return this.http.post<UsuarioResponse>(
       this.urlBase + 'usuarios', request);
   }
+
+  editar(Id: number, request: UsuarioRequest ): Observable<UsuarioRequest> {
+    return this.http.put<UsuarioResponse>(
+      `${this.urlBase}usuarios/${Id}`,
+      request
+    );
+  }
 }

@@ -1,5 +1,3 @@
-import { PaginacaoRequest } from "app/shared/components/models/requests/paginacao.request";
-
 export class EmprestimoRequest{
     NomeCompletoUsuario: string;
     TituloLivro: string;

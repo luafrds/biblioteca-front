@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PaginacaoResponse } from 'app/shared/components/models/responses/paginacao.response';
 import { USUARIO_LISTAR_FORM } from 'app/usuarios/formularios/usuario-listar.form';
 import { UsuarioListarRequest } from 'app/usuarios/models/requests/usuario-listar.request';
 import { UsuarioResponse } from 'app/usuarios/models/responses/usuario.response';
 import { UsuarioService } from 'app/usuarios/services/usuario.service';
+import { UsuarioEdicaoComponent } from '../../components/usuario-edicao/usuario-edicao.component';
 
 @Component({
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
 })
 export class UsuarioComponent implements OnInit {
+
+  @ViewChild(UsuarioEdicaoComponent) modal: UsuarioEdicaoComponent;
   
   usuarioForm?: FormGroup;
 
@@ -81,5 +84,10 @@ export class UsuarioComponent implements OnInit {
 
   limpar(): void {
     this.usuarioForm.reset();
+  }
+
+  editar(valoresIniciais: any){
+    this.modal.edicaoForm.patchValue(valoresIniciais);
+    this.modal.idEditar = valoresIniciais.Id;
   }
 }
