@@ -4,7 +4,7 @@ import { EMPRESTIMO_FORM } from 'app/emprestimos/formularios/emprestimo.form';
 import { EmprestimoRequest } from 'app/emprestimos/models/requests/emprestimo.request';
 import { EmprestimoResponse } from 'app/emprestimos/models/responses/emprestimo.response';
 import { EmprestimoService } from 'app/emprestimos/services/emprestimo.service';
-import { BsModalRef } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 
@@ -30,6 +30,7 @@ export class EmprestimoEdicaoComponent implements OnInit {
     readonly service: EmprestimoService,
     private spinner: NgxSpinnerService,
     private toastr: ToastrService,
+    readonly modalService: BsModalService
   ) { }
 
   ngOnInit() {
@@ -47,11 +48,16 @@ export class EmprestimoEdicaoComponent implements OnInit {
       next: () => {
         this.spinner.hide();
         this.toastr.success("Empréstimo editado!", "Sucesso!");
-        this.listar.emit()
+        this.listar.emit();
+        this.fecharModal();
       },
       error: () => {
         this.spinner.hide();
       },
     });
+  }
+
+  fecharModal(){
+    this.modalRef.hide();
   }
 }

@@ -1,7 +1,7 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
     <div class="modal-header custom-modal-header">
-      <h5 class="modal-title custom-modal-title text-center">EDIÇÃO DE USUÁRIO</h5>
+      <h5 class="modal-title custom-modal-title text-center font-weight-bold">EDIÇÃO DE LIVRO</h5>
     </div>
     <form class="form" [formGroup]="edicaoForm">
       <div class="modal-body pt-4">
@@ -19,7 +19,6 @@
             </div>
           </div>
         </div>
-        
         <div class="row col-12 pr-0">
           <div class="col-md-12 col-sm-12">
             <div class="form-group">
@@ -49,7 +48,7 @@
     <div class="modal-footer">
       <button
         type="button"
-        class="btn btn-limpar"
+        class="btn btn-limpar button-color2"
         data-dismiss="modal"
         (click)="modalRef.hide()">
         <i class="fa-solid fa-xmark fa-lg pr-2 text-center"></i>Cancelar
@@ -57,8 +56,8 @@
       <button
         type="submit"
         data-toggle="modal"
-          data-target="#editarModalCenter"
-        class="btn btn-primary ml-2"
+          data-target="#livroEditarModalCenter"
+        class="btn button-color ml-2"
         (click)="editar()"
         [disabled]="edicaoForm.invalid">
         <i class="fa fa-save pb-1 pr-2"></i>Editar

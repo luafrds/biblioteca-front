@@ -21,7 +21,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CoreModule,
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     ToastrModule.forRoot(),
-    ModalModule,
+    ModalModule.forRoot(),
     NgSelectModule,
   ],
   providers: [BsModalService],
