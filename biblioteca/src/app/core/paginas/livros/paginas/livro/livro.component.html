@@ -143,7 +143,8 @@
                               <i class="fa fa-cog" style="color: #3C6A54;"></i>
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" data-toggle="modal" data-target="#editarModalCenter" (click)="editar(item)" href="#">Editar</a></li>
+                              <li><a class="dropdown-item" data-toggle="modal" data-target="#editarModalCenter" (click)="editar(item)">Editar</a></li>
+                              <li><a class="dropdown-item" (click)="excluir(item.Id)">Excluir</a></li>
                             </ul>
                           </div>
                         </th>

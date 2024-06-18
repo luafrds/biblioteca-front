@@ -84,4 +84,16 @@ export class EmprestimoComponent implements OnInit {
     this.modal.edicaoForm.patchValue(valoresIniciais);
     this.modal.idEditar = valoresIniciais.Id;
   }
+
+  excluir(id: number): void {
+    this.carregando = true;
+    this.service.excluir(id).subscribe({
+      next: (response) => {
+        this.listarEmprestimos();
+        this.carregando = false;
+      },
+      error: () => {
+      },
+    });
+  }
 }

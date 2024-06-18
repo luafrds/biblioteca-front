@@ -12,9 +12,8 @@ import { UsuarioEdicaoComponent } from '../../components/usuario-edicao/usuario-
   templateUrl: './usuario.component.html',
 })
 export class UsuarioComponent implements OnInit {
-
   @ViewChild(UsuarioEdicaoComponent) modal: UsuarioEdicaoComponent;
-  
+
   usuarioForm?: FormGroup;
 
   response: PaginacaoResponse<UsuarioResponse>;
@@ -28,10 +27,10 @@ export class UsuarioComponent implements OnInit {
   atualizarValores: boolean = false;
 
   tipoUsuarioConfig = [
-    { Value: 0, Description: "Bibliotecario" },
-    { Value: 1, Description: "Professor" },
-    { Value: 2, Description: "Aluno" }
-  ]
+    { Value: 0, Description: 'Bibliotecario' },
+    { Value: 1, Description: 'Professor' },
+    { Value: 2, Description: 'Aluno' },
+  ];
 
   constructor(
     private readonly service: UsuarioService,
@@ -55,8 +54,7 @@ export class UsuarioComponent implements OnInit {
         this.mostrarPaginacao = true;
         this.carregando = false;
       },
-      error: () => {
-      },
+      error: () => {},
     });
   }
 
@@ -86,8 +84,20 @@ export class UsuarioComponent implements OnInit {
     this.usuarioForm.reset();
   }
 
-  editar(valoresIniciais: any){
+  editar(valoresIniciais: any) {
     this.modal.edicaoForm.patchValue(valoresIniciais);
     this.modal.idEditar = valoresIniciais.Id;
+  }
+
+  excluir(id: number): void {
+    this.carregando = true;
+    this.service.excluir(id).subscribe({
+      next: (response) => {
+        this.listarUsuarios();
+        this.carregando = false;
+      },
+      error: () => {
+      },
+    });
   }
 }

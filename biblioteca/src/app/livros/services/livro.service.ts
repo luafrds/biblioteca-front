@@ -32,4 +32,7 @@ export class LivroService {
       request
     );
   }
+
+  excluir(Id: number) {return this.http.delete(`${this.urlBase}livros/${Id}`);
+  }
 }

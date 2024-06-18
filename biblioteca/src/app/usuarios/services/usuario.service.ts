@@ -32,4 +32,7 @@ export class UsuarioService {
       request
     );
   }
+
+  excluir(Id: number) {return this.http.delete(`${this.urlBase}usuarios/${Id}`);
+  }
 }

@@ -32,4 +32,7 @@ export class EmprestimoService {
       request
     );
   }
+
+  excluir(Id: number) {return this.http.delete(`${this.urlBase}emprestimos/${Id}`);
+  }
 }
