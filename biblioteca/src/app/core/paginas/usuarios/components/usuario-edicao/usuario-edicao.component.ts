@@ -16,20 +16,18 @@ import { ToastrService } from 'ngx-toastr';
 export class UsuarioEdicaoComponent implements OnInit {
   @Output() listar: EventEmitter<UsuarioResponse> = new EventEmitter();
 
-  @Input() responseEdicao: UsuarioResponse;
-
   edicaoForm: FormGroup;
 
   request: UsuarioRequest;
 
-  idEditar: number;
+  @Input() idEditar: number;
 
   modalRef: BsModalRef;
 
   tipoUsuarioConfig = [
-    { Value: 0, Description: "Bibliotecário" },
-    { Value: 1, Description: "Professor" },
-    { Value: 2, Description: "Aluno" }
+    { Value: 1, Description: "Bibliotecário" },
+    { Value: 2, Description: "Professor" },
+    { Value: 3, Description: "Aluno" }
   ]
 
   constructor(
@@ -40,6 +38,7 @@ export class UsuarioEdicaoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.idEditar, "id");
     this.iniciarFormulario();
   }
 
@@ -60,5 +59,6 @@ export class UsuarioEdicaoComponent implements OnInit {
         this.spinner.hide();
       },
     });
+    console.log(this.idEditar, "id");
   }
 }

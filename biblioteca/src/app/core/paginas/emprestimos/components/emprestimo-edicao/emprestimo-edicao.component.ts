@@ -15,8 +15,6 @@ import { ToastrService } from 'ngx-toastr';
 export class EmprestimoEdicaoComponent implements OnInit {
   @Output() listar: EventEmitter<EmprestimoResponse> = new EventEmitter();
 
-  @Input() responseEdicao: EmprestimoResponse;
-
   edicaoForm: FormGroup;
 
   request: EmprestimoRequest;

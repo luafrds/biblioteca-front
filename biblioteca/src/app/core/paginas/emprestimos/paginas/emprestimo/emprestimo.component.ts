@@ -82,6 +82,7 @@ export class EmprestimoComponent implements OnInit {
 
   editar(valoresIniciais: any){
     this.modal.edicaoForm.patchValue(valoresIniciais);
+    this.modal.edicaoForm.patchValue({ DataEmprestimo: valoresIniciais.DataEmprestimo.Value });
     this.modal.idEditar = valoresIniciais.Id;
   }
 

@@ -23,9 +23,9 @@ export class UsuarioCadastroComponent implements OnInit {
   modalRef: BsModalRef;
 
   tipoUsuarioConfig = [
-    { Value: 0, Description: "Bibliotecário" },
-    { Value: 1, Description: "Professor" },
-    { Value: 2, Description: "Aluno" }
+    { Value: 1, Description: "Bibliotecário" },
+    { Value: 2, Description: "Professor" },
+    { Value: 3, Description: "Aluno" }
   ]
 
   constructor(

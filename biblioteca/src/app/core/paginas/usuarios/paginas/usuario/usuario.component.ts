@@ -27,9 +27,9 @@ export class UsuarioComponent implements OnInit {
   atualizarValores: boolean = false;
 
   tipoUsuarioConfig = [
-    { Value: 0, Description: 'Bibliotecario' },
-    { Value: 1, Description: 'Professor' },
-    { Value: 2, Description: 'Aluno' },
+    { Value: 1, Description: 'Bibliotecario' },
+    { Value: 2, Description: 'Professor' },
+    { Value: 3, Description: 'Aluno' },
   ];
 
   constructor(
@@ -84,7 +84,8 @@ export class UsuarioComponent implements OnInit {
     this.usuarioForm.reset();
   }
 
-  editar(valoresIniciais: any) {
+  editar(valoresIniciais: any) {  
+    console.log(valoresIniciais.Id, "ID passado para o modal");
     this.modal.edicaoForm.patchValue(valoresIniciais);
     this.modal.idEditar = valoresIniciais.Id;
   }

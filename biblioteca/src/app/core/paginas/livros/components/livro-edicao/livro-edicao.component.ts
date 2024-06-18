@@ -15,8 +15,6 @@ import { ToastrService } from 'ngx-toastr';
 export class LivroEdicaoComponent implements OnInit {
   @Output() listar: EventEmitter<LivroResponse> = new EventEmitter();
 
-  @Input() responseEdicao: LivroResponse;
-
   edicaoForm: FormGroup;
 
   request: LivroRequest;
