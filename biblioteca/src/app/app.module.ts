@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ModalModule, BsModalService } from 'ngx-bootstrap/modal';
     NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
     ToastrModule.forRoot(),
     ModalModule,
+    BrowserAnimationsModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]
