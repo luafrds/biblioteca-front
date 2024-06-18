@@ -4793,6 +4793,8 @@ a.close.disabled {
 .modal-header {
   display: -webkit-box;
   display: -ms-flexbox;
+  background-color: #3C6A54;
+  color: white;
   display: flex;
   -webkit-box-align: start;
   -ms-flex-align: start;
