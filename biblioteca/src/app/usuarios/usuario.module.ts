@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
 import { HttpClientModule } from "@angular/common/http";
 import { UsuarioRoutingModule } from "./usuario-routing.module";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ModalModule } from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [],
@@ -12,8 +15,11 @@ import { UsuarioRoutingModule } from "./usuario-routing.module";
     UsuarioRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    HttpClientModule,
     FormsModule,
+    NgSelectModule,
+    NgxSpinnerModule,
+    ModalModule,
+    HttpClientModule
   ]
 })
 export class LivroModule { }

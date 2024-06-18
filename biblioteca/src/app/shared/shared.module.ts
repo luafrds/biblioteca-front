@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from "./components/header/header.component";
 import { PaginacaoGenericaComponent } from "./components/paginacao-generica/paginacao-generica.component";
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -11,10 +13,12 @@ import { PaginacaoGenericaComponent } from "./components/paginacao-generica/pagi
     PaginacaoGenericaComponent
   ],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
+    CommonModule, 
+    ReactiveFormsModule, 
+    NgxSpinnerModule,
     RouterModule,
-    FormsModule
+    ToastrModule.forRoot(),
+    FormsModule,
   ],
   exports: [
     HeaderComponent,
